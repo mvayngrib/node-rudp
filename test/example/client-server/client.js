@@ -1,9 +1,10 @@
-var rudp = require('rudp');
+var rudp = require('../../../');
 var dgram = require('dgram');
 
 var socket = dgram.createSocket('udp4');
+socket.bind(12345)
 
-var client = new rudp.Client(socket, 'someaddress', 5000);
+var client = new rudp.Client(socket, '54.236.214.150', 12345);
 
 process.stdin.resume();
 

@@ -1,11 +1,11 @@
-var rudp = require('rudp');
+var rudp = require('../../../');
 var dgram = require('dgram');
 
 var socket = dgram.createSocket('udp4');
 
-socket.bind(5000);
+socket.bind(12345);
 
-console.log('UDP socket bound to port 5000');
+console.log('UDP socket bound to port 12345');
 
 var server = new rudp.Server(socket);
 
