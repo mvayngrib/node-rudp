@@ -1,3 +1,4 @@
+var dgram = require('dgram')
 var PacketSender = require('../../lib/PacketSender');
 var expect = require('expect.js');
 
@@ -33,7 +34,7 @@ describe('PacketSender', function () {
         new PacketSender(undefined, 'test.com', 4000);
       }).to.throwError();
 
-      new PacketSender({}, 'test.com', 4000);
+      new PacketSender(dgram.createSocket('udp4'), 'test.com', 4000);
     });
   });
 });
